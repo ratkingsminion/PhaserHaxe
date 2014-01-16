@@ -1,0 +1,67 @@
+package phaser.physics.arcade;
+import phaser.core.Game;
+import phaser.gameobjects.Sprite;
+import phaser.geom.Point;
+import phaser.geom.Rectangle;
+
+@:native("Phaser.Physics.Arcade.Body")
+@:publicFields
+extern class Body {
+	function new(sprite:Sprite);
+	var game:Game;
+	var offset:Point;
+	var x(default, null):Float;
+	var y(default, null):Float;
+	var preX(default, null):Float;
+	var preY(default, null):Float;
+	var preRotation(default, null):Float;
+	var screenX(default, null):Float;
+	var screenY(default, null):Float;
+	var sourceWidth(default, null):Float;
+	var sourceHeight(default, null):Float;
+	var width(default, null):Float;
+	var height(default, null):Float;
+	var halfWidth(default, null):Float;
+	var halfHeight(default, null):Float;
+	var center:Point;
+	var velocity:Point;
+	var acceleration:Point;
+	var drag:Point;
+	var gravity:Point;
+	var bounce:Point;
+	var maxVelocity:Point;
+	var angularVelocity:Float;
+	var angularAcceleration:Float;
+	var angularDrag:Float;
+	var maxAngular:Float;
+	var mass:Float;
+	var skipQuadTree:Bool;
+	var quadTreeIDs:Array<Int>;
+	var quadTreeIndex:Int;
+	var allowCollsion: { none:Bool, any:Bool, up:Bool, down:Bool, left:Bool, right:Bool };
+	var touching: { none:Bool, up:Bool, down:Bool, left:Bool, right:Bool };
+	var wasTouching: { none:Bool, up:Bool, down:Bool, left:Bool, right:Bool };
+	var facing:Int;
+	var immovable:Bool;
+	var moves:Bool;
+	var rotation:Float;
+	var allowRotation:Bool;
+	var allowGravity:Bool;
+	var customSeparateX:Bool;
+	var customSeparateY:Bool;
+	var overlapX:Float;
+	var overlapY:Float;
+	var hullX:Rectangle;
+	var hullY:Rectangle;
+	var embedded:Bool;
+	var collideWorldBounds:Bool;
+	function setSize(width:Float, height:Float, offsetX:Float, offsetY:Float):Void;
+	function reset():Void;
+	function deltaAbsX():Float;
+	function deltaAbsY():Float;
+	function deltaX():Float;
+	function deltaY():Float;
+	function deltaZ():Float;
+	var bottom(default, default):Float;
+	var right(default, default):Float;
+}
