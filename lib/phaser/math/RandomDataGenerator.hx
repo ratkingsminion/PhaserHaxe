@@ -2,8 +2,8 @@ package phaser.math;
 
 @:native("Phaser.RandomDataGenerator")
 @:publicFields
+// call these functions via myGame.rnd!
 extern class RandomDataGenerator {
-	// call these functions via myGame.rnd!
 	function new(?seeds:Dynamic);
 	function sow(?seeds:Dynamic):Void;
 	function integer():Int;

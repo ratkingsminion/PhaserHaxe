@@ -17,7 +17,7 @@ import phaser.sound.Sound;
 @:publicFields
 extern class Debug {
 	function new(game:Game);
-	var context:CanvasRenderingContext; // correct?
+	var context:CanvasRenderingContext;
 	var font:String;
 	var lineHeight:Float;
 	var renderShadow:Bool;

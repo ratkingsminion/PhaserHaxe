@@ -10,6 +10,9 @@ import phaser.geom.Point;
 @:publicFields
 extern class TilemapLayer extends Sprite {
 	@:overload(function (game:Game, x:Int, y:Int, renderWidth:Int, renderHeight:Int, tileset:Tileset, tilemap:Tilemap, layer:Int):Void { } )
+	/**
+	 * @param	tileset can be phaser.tilemap.Tileset or String
+	 */
 	function new(game:Game, x:Int, y:Int, renderWidth:Int, renderHeight:Int, tileset:String, tilemap:Tilemap, layer:Int);
 	var canvas:CanvasElement;
 	var context:CanvasRenderingContext2D;

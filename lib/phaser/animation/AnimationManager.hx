@@ -16,7 +16,10 @@ extern class AnimationManager {
 	function validateFrames(frames:Dynamic, ?useNumericIndex:Bool):Bool;
 	function play(name:String, ?frameRate:Float, ?loop:Bool, ?killOnComplete:Bool):Animation;
 	function stop(?name:String, ?resetFrame:Bool):Void;
-	function getAnimation(name:String):Dynamic; // returns Phaser.Animation|boolean
+	/**
+	 * returns Phaser.Animation or Bool (false)
+	 */
+	function getAnimation(name:String):Dynamic;
 	function refreshFrame():Void;
 	function destroy():Void;
 	var frameData(default, null):FrameData;

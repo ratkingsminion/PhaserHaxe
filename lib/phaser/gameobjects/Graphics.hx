@@ -9,7 +9,10 @@ extern class Graphics {
 	var type:Int;
 	var position: { x:Float, y:Float };
 	function destroy():Void;
-	function drawPolygon(poly:Dynamic):Void; // can be Phaser.Polygon or PIXI.Polygon
+	/**
+	 * @param	poly can be Phaser.Polygon or PIXI.Polygon
+	 */
+	function drawPolygon(poly:Dynamic):Void;
 	var angle(default, default):Float;
 	var x(default, default):Float;
 	var y(default, default):Float;

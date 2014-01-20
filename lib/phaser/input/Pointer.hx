@@ -33,9 +33,18 @@ extern class Pointer {
 	var circle:Circle;
 	function start(event:Dynamic):Pointer;
 	function update():Void;
-	function move(event:Dynamic):Void; // event:MouseEvent|PointerEvent|TouchEvent
-	function leave(event:Dynamic):Void; // event:MouseEvent|PointerEvent|TouchEvent
-	function stop(event:Dynamic):Void; // event:MouseEvent|PointerEvent|TouchEvent
+	/**
+	 * @param	event can be MouseEvent, PointerEvent or TouchEvent
+	 */
+	function move(event:Dynamic):Void;
+	/**
+	 * @param	event can be MouseEvent, PointerEvent or TouchEvent
+	 */
+	function leave(event:Dynamic):Void;
+	/**
+	 * @param	event can be MouseEvent, PointerEvent or TouchEvent
+	 */
+	function stop(event:Dynamic):Void;
 	function justPressed(?duration:Float):Bool;
 	function justReleased(?duration:Float):Bool;
 	function reset():Void;

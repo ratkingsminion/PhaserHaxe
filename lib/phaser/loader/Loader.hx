@@ -9,8 +9,11 @@ extern class Loader {
 	function new(game:Game);
 	var isLoading:Bool;
 	var hasLoaded:Bool;
-	var progress:Float; // 0 ... 100
-	var preloadSprite:Sprite; // Phaser.Sprite
+	/**
+	 * in the range of 0 ... 100
+	 */
+	var progress:Float;
+	var preloadSprite:Sprite;
 	var crossOrigin:String;
 	var baseURL:String;
 	var onFileComplete:Signal;

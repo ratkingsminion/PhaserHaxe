@@ -2,8 +2,8 @@ package phaser.math;
 
 @:native("Phaser.Math")
 @:publicFields
+// call these functions via myGame.math or myState.math!
 extern class Math {
-	// call these functions via myGame.math or myState.math!
 	var PI2(default, null):Float;
 	function fuzzyEqual(a:Float, b:Float, epsilon:Float):Bool;
 	function fuzzyLessThan(a:Float, b:Float, epsilon:Float):Bool;

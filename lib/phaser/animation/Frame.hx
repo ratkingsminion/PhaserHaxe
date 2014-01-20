@@ -14,7 +14,10 @@ extern class Frame {
 	var centerX:Int;
 	var centerY:Int;
 	var distance:Float;
-	var rotated:Bool; // not yet implemented
+	/**
+	 * not yet implemented
+	 */
+	var rotated:Bool;
 	var rotationDirection:String;
 	var trimmed:Bool;
 	var sourceSizeW:Float;

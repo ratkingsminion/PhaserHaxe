@@ -24,7 +24,10 @@ extern class Sound {
 	var isPlaying:Bool;
 	var currentMarker:String;
 	var pendingPlayback:Bool;
-	var override_(get, set):Bool; // just "override" doesn't work, it's a keyword in haxe
+	/**
+	 * is override without _ in original Phaser (it's a keyword in Haxe)
+	 */
+	var override_(get, set):Bool;
 	@:extern private inline function get_override_():Bool return untyped this["override"];
 	@:extern private inline function set_override_(value:Bool):Bool return untyped this["override"] = value;
 	var usingWebAudio:Bool;

@@ -19,12 +19,12 @@ extern class Tween {
 	function yoyo(yoyo:Bool):Tween;
 	function easing(easing:Float->Float):Tween;
 	function interpolation(interpolation:Float->Float->Float):Tween;
-	function chain(?tween1:Tween, ?tween2:Tween, ?tween3:Tween, ?tween4:Tween, ?tween5:Tween, ?tween6:Tween, ?tween7:Tween, ?tween8:Tween):Tween; // want more? add them!
+	function chain(?tween1:Tween, ?tween2:Tween, ?tween3:Tween, ?tween4:Tween, ?tween5:Tween, ?tween6:Tween, ?tween7:Tween, ?tween8:Tween):Tween; // want more parameters? add them!
 	function loop():Tween;
 	function onStartCallback(callback:Dynamic):Tween;
 	function onUpdateCallback(callback:Dynamic):Tween;
 	function onCompleteCallback(callback:Dynamic):Tween;
 	function pause():Void;
 	function resume():Void;
-	function update(time:Float):Bool; // does not needed to be called
+	function update(time:Float):Bool;
 }

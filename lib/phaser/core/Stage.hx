@@ -14,7 +14,10 @@ extern class Stage {
 	var scaleMode:Int;
 	var scale:StageScaleMode;
 	var aspectRatio:Float;
-	var checkOffsetInterval:Dynamic; // Number|false
+	/**
+	 * can be Float or Bool (false)
+	 */
+	var checkOffsetInterval:Dynamic;
 	function boot():Void;
 	function update():Void;
 	function visibilityChange():Event;

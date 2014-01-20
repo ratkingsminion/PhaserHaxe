@@ -12,7 +12,7 @@ import phaser.physics.arcade.Body;
 
 @:native("Phaser.Sprite")
 @:publicFields
-extern class Sprite {
+extern class Sprite { // extends PIXI.Sprite
 	function new(game:Game, ?x:Float, ?y:Float, ?key:Dynamic, ?frame:Dynamic);
 	var game:Game;
 	var exists:Bool;
