@@ -1,4 +1,4 @@
-package phaser.net;
+package phaser.particles;
 import phaser.core.Game;
 import phaser.particles.arcade.Emitter;
 

@@ -18,7 +18,7 @@ extern class Keyboard {
 	function createCursorKeys(): { up:Key, down:Key, left:Key, right:Key };
 	function start():Void;
 	function stop():Void;
-	@:overloading(function (keycode:Array<Int>):Void { } )
+	@:overload(function (keycode:Array<Int>):Void { } )
 	function addKeyCapture(keycode:Int):Void;
 	function removeKeyCapture(keycode:Int):Void;
 	function clearCaptures():Void;

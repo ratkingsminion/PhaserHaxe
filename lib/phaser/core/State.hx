@@ -3,6 +3,7 @@ import phaser.input.Input;
 import phaser.loader.Cache;
 import phaser.loader.Loader;
 import phaser.math.Math;
+import phaser.particles.Particles;
 import phaser.physics.arcade.Arcade;
 import phaser.sound.SoundManager;
 import phaser.time.Time;
@@ -24,7 +25,7 @@ extern class State {
 	var time:Time;
 	var tweens:TweenManager;
 	var world:World;
-	var particles:Dynamic; // Phaser.Particles
+	var particles:Particles;
 	var physics:Arcade;
 	function preload():Void;
 	function loadUpdate():Void;

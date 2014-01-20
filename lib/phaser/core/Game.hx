@@ -7,6 +7,7 @@ import phaser.loader.Loader;
 import phaser.math.Math;
 import phaser.math.RandomDataGenerator;
 import phaser.net.Net;
+import phaser.particles.Particles;
 import phaser.physics.arcade.Arcade;
 import phaser.sound.SoundManager;
 import phaser.system.Device;
@@ -49,5 +50,5 @@ extern class Game {
 	var canvas:CanvasElement; 
 	var context:Dynamic;
 	var debug:Debug;
-	var particles:Dynamic; //  Phaser.Particles
+	var particles:Particles;
 }
