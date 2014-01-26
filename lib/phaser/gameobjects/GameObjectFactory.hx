@@ -18,7 +18,7 @@ extern class GameObjectFactory {
 	function sprite(x:Float, y:Float, key:Dynamic, ?frame:Dynamic):Sprite;
 	function child(group:Group, x:Float, y:Float, key:Dynamic, ?frame:Dynamic):Sprite;
 	function tween(object:Dynamic):Tween;
-	function group(parent:Dynamic, ?name:String):Group;
+	function group(?parent:Dynamic, ?name:String):Group;
 	function audio(key:String, ?volume:Float, ?loop:Bool, ?connect:Bool):Sound;
 	function tileSprite(x:Float, y:Float, width:Float, height:Float, key:Dynamic, ?frame:Dynamic):TileSprite;
 	function text(x:Float, y:Float, text:String, style:Dynamic):Dynamic; // return Phaser.Text
@@ -28,7 +28,8 @@ extern class GameObjectFactory {
 	function bitmapText(x:Float, y:Float, text:String, style:Dynamic):BitmapText;
 	function tilemap(key:String):Tilemap;
 	function tileset(key:String):Tileset;
-	function tilemapLayer(x:Float, y:Float, width:Float, height:Float):TilemapLayer;
+	@:overload(function (x:Float, y:Float, width:Float, height:Float, ?tileset:String, ?tilemap:Tilemap, ?layer:Int):TilemapLayer { } )
+	function tilemapLayer(x:Float, y:Float, width:Float, height:Float, ?tileset:Tileset, ?tilemap:Tilemap, ?layer:Int):TilemapLayer;
 	function renderTexture(key:String, width:Float, height:Float):RenderTexture;
 	function bitmapData(?width:Int, ?height:Int):BitmapData;
 	function filter(filter:String, ?param1:Dynamic, ?param2:Dynamic, ?param3:Dynamic, ?param4:Dynamic, ?param5:Dynamic, ?param6:Dynamic, ?param7:Dynamic, ?param8:Dynamic):Filter;

@@ -20,7 +20,7 @@ extern class Group {
 	function addAt(child:Dynamic, index:Int):Dynamic;
 	function getAt(index:Int):Dynamic;
 	function create(x:Float, y:Float, key:String, frame:Dynamic, ?exists:Bool):Sprite;
-	function createMultiple(quantity:Int, key:String, frame:Dynamic, ?exists:Bool):Void;
+	function createMultiple(quantity:Int, key:String, ?frame:Dynamic, ?exists:Bool):Void;
 	function next():Void;
 	function previous():Void;
 	function swap(child1:Dynamic, child2:Dynamic):Bool;

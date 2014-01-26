@@ -3,7 +3,7 @@ import phaser.core.Game;
 import phaser.core.Group;
 import phaser.geom.Point;
 
-@:native("Phaser.Emitter")
+@:native("Phaser.Particles.Arcade.Emitter")
 @:publicFields
 extern class Emitter extends Group {
 	function new(game:Game, x:Float, y:Float, ?maxParticles:Int);

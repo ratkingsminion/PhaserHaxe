@@ -35,7 +35,7 @@ extern class Loader {
 	function tileset(key:String, url:String, tileWidth:Int, tileHeight:Int, ?tileMax:Int, ?tileMargin:Int, ?tileSpacing:Int):Loader;
 	@:overload(function(key:String, urls:String, ?autoDecode:Bool):Loader{})
 	function audio(key:String, urls:Array<String>, ?autoDecode:Bool):Loader;
-	function tilemap(key:String, ?mapDataURL:String, ?mapData:Dynamic, ?format:String):Loader;
+	function tilemap(key:String, ?mapDataURL:String, ?mapData:Dynamic, ?format:Int):Loader;
 	function bitmapFont(key:String, textureURL:String, ?xmlURL:String, ?xmlData:Dynamic):Loader;
 	function atlasJSONArray(key:String, textureURL:String, atlasURL:String, ?atlasData:Dynamic):Loader;
 	function atlasJSONHash(key:String, textureURL:String, atlasURL:String, ?atlasData:Dynamic):Loader;

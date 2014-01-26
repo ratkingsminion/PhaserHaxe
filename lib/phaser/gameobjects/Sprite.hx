@@ -71,5 +71,6 @@ extern class Sprite { // extends PIXI.Sprite
 	var height(default, default):Float;
 	var inputEnabled(default, default):Bool;
 	// stuff by PIXI
+	var alpha:Float;
 	var filters(default, default):Array<Filter>;
 }
