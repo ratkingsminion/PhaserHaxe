@@ -1,4 +1,5 @@
 package phaser.loader;
+import js.html.XMLHttpRequest;
 import phaser.core.Game;
 import phaser.core.Signal;
 import phaser.gameobjects.Sprite;
@@ -12,7 +13,8 @@ extern class Loader {
 	/**
 	 * in the range of 0 ... 100
 	 */
-	var progress:Float;
+	var progress:Int;
+	var progressFloat:Float;
 	var preloadSprite:Sprite;
 	var crossOrigin:String;
 	var baseURL:String;
@@ -27,14 +29,16 @@ extern class Loader {
 	function checkKeyExists(type:String, key:String):Bool;
 	function getAsset(type:String, key:String):Dynamic;
 	function reset():Void;
-	function addToFileList(type:String, key:String, url:String, ?properties:Dynamic):Void;
 	function image(key:String, url:String, ?overwrite:Bool):Loader;
 	function text(key:String, url:String, ?overwrite:Bool):Loader;
 	function script(key:String, url:String):Loader;
-	function spritesheet(key:String, url:String, frameWidth:Int, frameHeight:Int, ?frameMax:Int):Loader;
-	function tileset(key:String, url:String, tileWidth:Int, tileHeight:Int, ?tileMax:Int, ?tileMargin:Int, ?tileSpacing:Int):Loader;
-	@:overload(function(key:String, urls:String, ?autoDecode:Bool):Loader{})
-	function audio(key:String, urls:Array<String>, ?autoDecode:Bool):Loader;
+	function binary(key:String, url:String, callback:Dynamic, callbackContext:Dynamic):Loader;
+	function spritesheet(key:String, url:String, frameWidth:Int, frameHeight:Int, ?frameMax:Int, ?margin:Int, ?spacing:Int):Loader;
+	@:overload(function(key:String, urls:String, ?autoDecode:Bool):Loader { } )
+	/**
+	 * @param	urls can be String or Array<String>
+	 */
+	function audio(key:String, urls:Dynamic, ?autoDecode:Bool):Loader;
 	function tilemap(key:String, ?mapDataURL:String, ?mapData:Dynamic, ?format:Int):Loader;
 	function bitmapFont(key:String, textureURL:String, ?xmlURL:String, ?xmlData:Dynamic):Loader;
 	function atlasJSONArray(key:String, textureURL:String, atlasURL:String, ?atlasData:Dynamic):Loader;
@@ -52,4 +56,17 @@ extern class Loader {
 	function xmlLoadComplete(index:Int):Void;
 	function totalLoadedFiles():Int;
 	function totalQueuedFiles():Int;
+	
+	private var _fileList:Dynamic;
+	private var _fileIndex:Int;
+	private var _progressChunk:Float;
+	private var _xhr:XMLHttpRequest;
+	private function addToFileList(type:String, key:String, url:String, ?properties:Dynamic):Void;
+	private function replaceInFileList(type:String, key:String, url:String, ?properties:Dynamic):Void;
+	private function loadFile():Void;
+	/**
+	 * @param	urls can be String or Array<String>
+	 */
+	private function getAudioURL(urls:Dynamic):Void;
+	private function nextFile(previousIndex:Int, success:Bool):Void;
 }

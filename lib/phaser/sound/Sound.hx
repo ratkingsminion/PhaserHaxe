@@ -33,6 +33,7 @@ extern class Sound {
 	var usingWebAudio:Bool;
 	var usingAudioTag:Bool;
 	var externalNode:Dynamic;
+	var gainNode:Dynamic;
 	var onDecoded:Signal;
 	var onPlay:Signal;
 	var onPause:Signal;
@@ -52,4 +53,11 @@ extern class Sound {
 	var isDecoded(default, null):Bool;
 	var mute(default, default):Bool;
 	var volume(default, default):Float;
+	
+	private var _volume:Float;
+	private var _buffer:Dynamic;
+	private var _muted:Bool;
+	private var _sound:Dynamic;
+	private function soundHasUnlocked(key:String):Void;
+	private function update():Void;
 }

@@ -1,4 +1,5 @@
 package phaser.input;
+import js.html.KeyboardEvent;
 import phaser.core.Game;
 import phaser.core.Signal;
 
@@ -19,6 +20,9 @@ extern class Key {
 	var keyCode:Int;
 	var onDown:Signal;
 	var onUp:Signal;
-	function justPressed(duration:Float):Bool;
-	function justReleased(duration:Float):Bool;
+	function justPressed(duration:Int):Bool;
+	function justReleased(duration:Int):Bool;
+	
+	private function processKeyDown(event:KeyboardEvent):Void;
+	private function processKeyUp(event:KeyboardEvent):Void;
 }

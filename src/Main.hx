@@ -3,7 +3,6 @@ package ;
 import phaser.core.Game;
 import phaser.gameobjects.Sprite;
 import phaser.gameobjects.Text;
-import phaser.geom.Point;
 import phaser.particles.arcade.Emitter;
 import phaser.Phaser;
 import phaser.sound.Sound;

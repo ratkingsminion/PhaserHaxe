@@ -1,4 +1,5 @@
 package phaser.core;
+import phaser.gameobjects.GameObjectFactory;
 import phaser.input.Input;
 import phaser.loader.Cache;
 import phaser.loader.Loader;

@@ -8,6 +8,6 @@ extern class PointMath {
 	static function multiply(a:Point, b:Point, ?out:Point):Point;
 	static function divide(a:Point, b:Point, ?out:Point):Point;
 	static function equals(a:Point, b:Point):Bool;
-	static function distance(a:Point, b:Point, round:Bool):Float;
-	static function rotate(a:Point, x:Float, y:Float, angle:Float, asDegrees:Bool, distance:Float):Point;
+	static function distance(a:Point, b:Point, ?round:Bool):Float;
+	static function rotate(a:Point, x:Float, y:Float, angle:Float, ?asDegrees:Bool, ?distance:Float):Point;
 }

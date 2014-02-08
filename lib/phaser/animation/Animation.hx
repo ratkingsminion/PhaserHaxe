@@ -5,7 +5,10 @@ import phaser.gameobjects.Sprite;
 @:native("Phaser.Animation")
 @:publicFields
 extern class Animation {
-	function new(game:Game, poarent:Sprite, name:String, frameData:FrameData, frames:Dynamic, delay:Float, looped:Bool);
+	/**
+	 * @param	frames can be Array<Int> or Array<String>
+	 */
+	function new(game:Game, parent:Sprite, name:String, frameData:FrameData, frames:Dynamic, delay:Int, looped:Bool);
 	var game:Game;
 	var name:String;
 	var delay:Float;
@@ -20,9 +23,17 @@ extern class Animation {
 	function stop(?resetFrame:Bool):Void;
 	function update():Bool;
 	function destroy():Void;
+	function onComplete():Void;
 	var paused(default, default):Bool;
 	var frameTotal(default, null):Int;
 	var frame(default, default):Int;
-	function generateFrameNames(prefix:String, start:Int, stop:Int, ?suffix:String, ?zeroPad:Int):Array<String>;
+	static function generateFrameNames(prefix:String, start:Int, stop:Int, ?suffix:String, ?zeroPad:Int):Array<String>;
 	
+	private var _parent:Sprite;
+	private var _frameData:FrameData;
+	private var _frames:Dynamic;
+	private var _pauseStartTime:Int;
+	private var _frameIndex:Int;
+	private var _frameDiff:Int;
+	private var _frameSkip:Int;
 }

@@ -20,7 +20,7 @@ extern class Point {
 	function copyTo(dest: { x:Float, y:Float } ):Dynamic;
 	function distance(dest: { x:Float, y:Float }, round:Bool):Float;
 	function equals(a:Point):Bool;
-	function rotate(x:Float, y:Float, angle:Float, asDegrees:Bool, distance:Float):Point;
+	function rotate(x:Float, y:Float, angle:Float, asDegrees:Bool, ?distance:Float):Point;
 	function getMagnitude():Float;
 	function setMagnitude(magnitude:Float):Point;
 	function normalize():Point;

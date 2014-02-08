@@ -20,5 +20,7 @@ extern class Events {
 	var onAnimationStart:Dynamic;
 	var onAnimationComplete:Dynamic;
 	var onAnimationLoop:Dynamic;
+	var onBeginContact:Dynamic;
+	var onEndContact:Dynamic;
 	function destroy():Void;
 }

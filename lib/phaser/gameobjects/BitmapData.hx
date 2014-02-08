@@ -50,7 +50,7 @@ extern class BitmapData {
 	function fillRect(x:Float, y:Float, width:Float, height:Float):BitmapData;
 	function fillStyle(color:String):BitmapData;
 	function font(font:String):BitmapData;
-	function alpha(alpha:Float):BitmapData;
+	function globalAlpha(alpha:Float):BitmapData;
 	function globalCompositeOperation(operation:String):BitmapData;
 	function lineCap(style:String):BitmapData;
 	function lineDashOffset(offset:Float):BitmapData;
@@ -63,10 +63,11 @@ extern class BitmapData {
 	function rect(x:Float, y:Float, width:Float, height:Float):BitmapData;
 	function restore():BitmapData;
 	function rotate(angle:Float):BitmapData;
-	@:overload(function(thickness:Float, ?caps:Int, ?joints:String, ?miterLimit:Float, ?ignoreScale:Bool):BitmapData { } )
-	@:overload(function(thickness:Float, ?caps:String, ?joints:Int, ?miterLimit:Float, ?ignoreScale:Bool):BitmapData { } )
-	@:overload(function(thickness:Float, ?caps:String, ?joints:String, ?miterLimit:Float, ?ignoreScale:Bool):BitmapData { } )
-	function setStrokeStyle(thickness:Float, ?caps:Int, ?joints:Int, ?miterLimit:Float, ?ignoreScale:Bool):BitmapData;
+	/**
+	 * @param	?caps can be String or Int
+	 * @param	?joints can be String or Int
+	 */
+	function setStrokeStyle(thickness:Float, ?caps:Dynamic, ?joints:Dynamic, ?miterLimit:Float, ?ignoreScale:Bool):BitmapData;
 	function save():BitmapData;
 	function scale(x:Float, y:Float):BitmapData;
 	function scrollPathIntoView():BitmapData;
@@ -86,13 +87,19 @@ extern class BitmapData {
 	function f(color:String):Int;
 	function lf(colors:Array<String>, ratios:Array<Float>, x0:Float, y0:Float, x1:Float, y1:Float):BitmapData;
 	// function rf ... beginRadialGradientFill is missing!
-	// function ef .... endFill is missing!
+	// function ef ... endFill is missing!
 	function ss(thickness:Float, ?caps:Int, ?joints:Int, ?miterLimit:Float, ?ignoreScale:Bool):BitmapData;
 	function s(color:String):BitmapData;
 	function ls(colors:Array<String>, ratios:Array<Float>, x0:Float, y0:Float, x1:Float, y1:Float):BitmapData;
 	function rs(colors:Array<String>, ratios:Array<Float>, x0:Float, y0:Float, r0:Float, x1:Float, y1:Float, r1:Float):BitmapData;
+	// function bs ... endStroke is missing!
 	// function es ... endStroke is missing!
 	function dr(x:Float, y:Float, width:Float, height:Float):BitmapData;
+	// function rr ... endStroke is missing!
+	// function rc ... endStroke is missing!
 	function dc(x:Float, y:Float, radius:Float):BitmapData;
 	function de(x:Float, y:Float, w:Float, h:Float):BitmapData;
+	// function dp ... endStroke is missing!
+	
+	private var _dirty:Bool;
 }

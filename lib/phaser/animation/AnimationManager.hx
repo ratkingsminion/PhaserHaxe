@@ -11,15 +11,15 @@ extern class AnimationManager {
 	var currentFrame:Frame;
 	var updateIfVisible:Bool;
 	var isLoaded:Bool;
-	function loadFrameData(frameData:FrameData):Void;
 	function add(name:String, ?frames:Dynamic, ?frameRate:Float, ?loop:Bool, ?useNumericIndex:Bool):Animation;
-	function validateFrames(frames:Dynamic, ?useNumericIndex:Bool):Bool;
+	/**
+	 * @param	frames can be Array<Int> or Array<String>
+	 * @param	useNumericIndex must be set to false when frames is Array<String>
+	 */
+	function validateFrames(frames:Dynamic, useNumericIndex:Bool):Bool;
 	function play(name:String, ?frameRate:Float, ?loop:Bool, ?killOnComplete:Bool):Animation;
 	function stop(?name:String, ?resetFrame:Bool):Void;
-	/**
-	 * returns Phaser.Animation or Bool (false)
-	 */
-	function getAnimation(name:String):Dynamic;
+	function getAnimation(name:String):Animation;
 	function refreshFrame():Void;
 	function destroy():Void;
 	var frameData(default, null):FrameData;
@@ -27,4 +27,10 @@ extern class AnimationManager {
 	var paused(default, default):Bool;
 	var frame(default, default):Int;
 	var frameName(default, default):String;
+	
+	private var _frameData:FrameData;
+	private var _anims:Dynamic;
+	private var _outputFrames:Dynamic;
+	private function loadFrameData(frameData:FrameData):Void;
+	private function update():Bool;
 }

@@ -22,6 +22,8 @@ extern class InputHandler {
 	var snapOnRelease:Bool;
 	var snapX:Float;
 	var snapY:Float;
+	var snapOffsetX:Float;
+	var snapOffsetY:Float;
 	var pixelPerfect:Bool;
 	var pixelPerfectAlpha:Int;
 	var draggable:Bool;
@@ -58,8 +60,15 @@ extern class InputHandler {
 	function startDrag(pointer:Pointer):Void;
 	function stopDrag(pointer:Pointer):Void;
 	function setDragLock(?allowHorizontal:Bool, ?allowVertical:Bool):Void;
-	function enableSnap(snapX:Float, snapY:Float, ?onDrag:Bool, ?onRelease:Bool):Void;
+	function enableSnap(snapX:Float, snapY:Float, ?onDrag:Bool, ?onRelease:Bool, ?snappOffsetX:Float, ?snappOffsetY:Float):Void;
 	function disableSnap():Void;
 	function checkBoundsRect():Void;
 	function checkBoundsSprite():Void;
+	
+	private var _tempPoint:Point;
+	private var _pointerData:Dynamic;
+	private function _pointerOverHandler(pointer:Pointer):Void;
+	private function _pointerOutHandler(pointer:Pointer):Void;
+	private function _touchedHandler(pointer:Pointer):Void;
+	private function _releasedHandler(pointer:Pointer):Void;
 }

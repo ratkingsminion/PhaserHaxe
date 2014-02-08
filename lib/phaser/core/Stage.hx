@@ -11,16 +11,23 @@ extern class Stage {
 	var game:Game;
 	var offset:Point;
 	var canvas:CanvasElement;
+	var display:Dynamic; // PIXI.Stage
 	var scaleMode:Int;
+	var fullScreenScaleMode:Int;
 	var scale:StageScaleMode;
 	var aspectRatio:Float;
+	var disableVisibilityChange:Bool;
 	/**
 	 * can be Float or Bool (false)
 	 */
 	var checkOffsetInterval:Dynamic;
 	function boot():Void;
 	function update():Void;
-	function visibilityChange():Event;
+	function visibilityChange(event:Event):Void;
 	var backgroundColor(default, default):Dynamic;
-	var disableVisibilityChange:Bool;
+	
+	private var _backgroundColor:String;
+	private var _stage:Dynamic; // PIXI.Stage
+	private var _nextOffsetCheck:Int;
+	private function parseConfig(config:Dynamic):Void;
 }

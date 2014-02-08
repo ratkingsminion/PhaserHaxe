@@ -4,7 +4,6 @@ import phaser.core.Game;
 @:native("Phaser.RequestAnimationFrame")
 @:publicFields
 extern class RequestAnimationFrame {
-
 	function new(game:Game);
 	var game:Game;
 	var isRunning:Bool;
@@ -15,4 +14,8 @@ extern class RequestAnimationFrame {
 	function stop():Void;
 	function isSetTimeOut():Bool;
 	function isRAF():Bool;
+	
+	private var _isSetTimeOut:Bool;
+	private var _onLoop:Dynamic;
+	private var _timeOutID:Int;
 }

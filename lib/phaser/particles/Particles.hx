@@ -11,4 +11,6 @@ extern class Particles {
 	var ID:Int;
 	function add(emitter:Emitter):Emitter;
 	function remove(emitter:Emitter):Void;
+	
+	private function update():Void;
 }

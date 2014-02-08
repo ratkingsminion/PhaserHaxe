@@ -23,7 +23,7 @@ extern class Rectangle {
 	function equals(b:Rectangle):Bool;
 	function intersection(b:Rectangle, ?out:Rectangle):Rectangle;
 	function intersects(b:Rectangle, ?tolerance:Float):Bool;
-	function intersectsRaw(left:Float, right:Float, top:Float, bottom:Float, tolerance:Float):Bool;
+	function intersectsRaw(left:Float, right:Float, top:Float, bottom:Float, ?tolerance:Float):Bool;
 	function union(b:Rectangle, ?out:Rectangle):Rectangle;
 	function toString():String;
 	var halfWidth(default, null):Float;

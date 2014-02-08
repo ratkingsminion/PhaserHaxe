@@ -51,4 +51,9 @@ extern class Pointer {
 	var duration(default, null):Float;
 	var worldX(default, null):Float;
 	var worldY(default, null):Float;
+	
+	private var _holdSent:Bool;
+	private var _history:Dynamic;
+	private var _nextDrop:Int;
+	private var _stateReset:Bool;
 }

@@ -6,6 +6,9 @@ import phaser.input.Pointer;
 extern class Filter {
 	function new(game:Game, ?uniforms:Dynamic, ?fragmentSrc:Array<String>);
 	var game:Game;
+	/**
+	 * either Phaser.WEBGL_FILTER or Phaser.CANVAS_FILTER
+	 */
 	var type:Int;
 	var passes:Array<Filter>;
 	var dirty:Bool;

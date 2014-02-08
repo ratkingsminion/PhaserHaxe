@@ -1,4 +1,6 @@
 package phaser.input;
+import js.html.CanvasElement;
+import js.html.CanvasRenderingContext2D;
 import phaser.core.Game;
 import phaser.core.LinkedList.LinkedList;
 import phaser.core.Signal;
@@ -10,8 +12,10 @@ import phaser.geom.Point;
 extern class Input {
 	function new(game:Game);
 	var game:Game;
-	var hitCanvas:Dynamic;
-	var hitContext:Dynamic;
+	var hitCanvas:CanvasElement;
+	var hitContext:CanvasRenderingContext2D;
+	var moveCallback:Dynamic;
+	var moveCallbackContext:Dynamic;
 	static var MOUSE_OVERRIDES_TOUCH(default, null):Int;
 	static var TOUCH_OVERRIDES_MOUSE(default, null):Int;
 	static var MOUSE_TOUCH_COMBINE(default, null):Int;
@@ -48,12 +52,14 @@ extern class Input {
 	var keyboard:Keyboard;
 	var touch:Touch;
 	var mspointer:MSPointer;
+	var gamepad:Gamepad;
 	var onDown:Signal;
 	var onUp:Signal;
 	var onTap:Signal;
 	var onHold:Signal;
 	var interactiveItems:LinkedList;
 	function destroy():Void;
+	function setMoveCallback(callback:Dynamic, callbackContext:Dynamic):Void;
 	function addPointer():Pointer;
 	function reset(?hard:Bool):Void;
 	function resetSpeed(x:Float, y:Float):Void;
@@ -69,4 +75,11 @@ extern class Input {
 	var totalActivePointers(default, null):Int;
 	var worldX(default, null):Float;
 	var worldY(default, null):Float;
+	
+	private var _pollCounter:Int;
+	private var _oldPosition:Point;
+	private var _x:Float;
+	private var _y:Float;
+	private function boot():Void;
+	private function update():Void;
 }

@@ -6,7 +6,6 @@ import phaser.core.Game;
 extern class TweenManager {
 	function new(game:Game);
 	var game:Game;
-	var REVISION:String;
 	function getAll():Array<Tween>;
 	function removeAll():Void;
 	function add(tween:Tween):Tween;
@@ -16,4 +15,7 @@ extern class TweenManager {
 	function isTweening(object:Dynamic):Bool;
 	function pauseAll():Void;
 	function resumeAll():Void;
+	
+	private var _tweens:Array<Tween>;
+	private var _add:Array<Tween>;
 }

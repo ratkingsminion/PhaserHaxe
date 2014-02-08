@@ -16,7 +16,7 @@ extern class Camera {
 	var visible:Bool;
 	var atLimit: { x:Bool, y:Bool };
 	var target:Sprite;
-	var displayObject:Dynamic;
+	var displayObject:Dynamic; // PIXI.DisplayObject
 	static var FOLLOW_LOCKON(default, null):Int;
 	static var FOLLOW_PLATFORMER(default, null):Int;
 	static var FOLLOW_TOPDOWN(default, null):Int;
@@ -25,7 +25,6 @@ extern class Camera {
 	function focusOn(displayObject: { x:Float, y:Float } ):Void;
 	function focusOnXY(x:Float, y:Float):Void;
 	function update():Void;
-	function updateTarget():Void;
 	function setBoundsToWorld():Void;
 	function checkBounds():Void;
 	function setPosition(x:Float, y:Float):Void;
@@ -34,4 +33,7 @@ extern class Camera {
 	var y(default, default):Float;
 	var width(default, default):Float;
 	var height(default, default):Float;
+	
+	private var _edge:Int;
+	private function updateTarget():Void;
 }

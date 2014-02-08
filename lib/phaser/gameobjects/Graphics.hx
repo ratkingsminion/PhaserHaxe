@@ -3,7 +3,7 @@ import phaser.core.Game;
 
 @:native("Phaser.Graphics")
 @:publicFields
-extern class Graphics {
+extern class Graphics {  // TODO extends PIXI.Graphics
 	function new(game:Game, x:Float, y:Float);
 	var game:Game;
 	var type:Int;

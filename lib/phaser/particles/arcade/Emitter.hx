@@ -8,7 +8,6 @@ import phaser.geom.Point;
 extern class Emitter extends Group {
 	function new(game:Game, x:Float, y:Float, ?maxParticles:Int);
 	var maxParticles:Int;
-	var type:Int;
 	var width:Float;
 	var height:Float;
 	var minParticleSpeed:Point;
@@ -19,7 +18,8 @@ extern class Emitter extends Group {
 	var maxRotation:Float;
 	var gravity:Float;
 	var particleClass:Dynamic;
-	var particleDrag:Point;
+	var particleFriction:Float;
+	var angularDrag:Float;
 	var frequency:Int;
 	var lifeSpan:Int;
 	var bounce:Point;
@@ -27,7 +27,11 @@ extern class Emitter extends Group {
 	var emitX:Bool;
 	var emitY:Bool;
 	function update():Void;
-	function makeParticles(keys:Dynamic, ?frames:Int, ?quantity:Int, ?collide:Int, ?collideWorldBounds:Bool):Emitter;
+	/**
+	 * @param	keys can be String or Array<String>
+	 * @param	?frames can be Int, String, Array<Int> or Array<String>
+	 */
+	function makeParticles(keys:Dynamic, ?frames:Dynamic, ?quantity:Int, ?collide:Int, ?collideWorldBounds:Bool):Emitter;
 	function kill():Void;
 	function revive():Void;
 	function start(?explode:Bool, ?lifeSpan:Int, ?frequency:Int, ?quantity:Int):Void;
@@ -41,4 +45,9 @@ extern class Emitter extends Group {
 	var right(default, default):Float;
 	var top(default, default):Float;
 	var bottom(default, default):Float;
+	
+	private var _quantity:Int;
+	private var _timer:Int;
+	private var _counter:Int;
+	private var _explode:Bool;
 }

@@ -15,4 +15,7 @@ extern class PluginManager {
 	function render():Void;
 	function postRender():Void;
 	function destroy():Void;
+	
+	private var _parent:Dynamic;
+	private var _pluginsLength:Int;
 }

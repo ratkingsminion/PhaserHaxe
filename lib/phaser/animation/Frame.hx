@@ -20,11 +20,11 @@ extern class Frame {
 	var rotated:Bool;
 	var rotationDirection:String;
 	var trimmed:Bool;
-	var sourceSizeW:Float;
-	var sourceSizeH:Float;
-	var spriteSourceSizeX:Float;
-	var spriteSourceSizeY:Float;
-	var spriteSourceSizeW:Float;
-	var spriteSourceSizeH:Float;
+	var sourceSizeW:Int;
+	var sourceSizeH:Int;
+	var spriteSourceSizeX:Int;
+	var spriteSourceSizeY:Int;
+	var spriteSourceSizeW:Int;
+	var spriteSourceSizeH:Int;
 	function setTrim(trimmed:Bool, actualWidth:Int, actualHeight:Int, destX:Int, destY:Int, destWidth:Int, destHeight:Int):Void;
 }

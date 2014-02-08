@@ -36,4 +36,7 @@ extern class Phaser {
 	static var RIGHT(default, null):Int;
 	static var UP(default, null):Int;
 	static var DOWN(default, null):Int;
+	
+	static var CANVAS_PX_ROUND(default, null):Bool;
+	static var CANVAS_CLEAR_RECT(default, null):Bool;
 }

@@ -5,7 +5,7 @@ import phaser.geom.Point;
 
 @:native("Phaser.BitmapText")
 @:publicFields
-extern class BitmapText {
+extern class BitmapText { // TODO extends PIXI.BitmapText
 	function new(game:Game, ?x:Float, ?y:Float, ?text:String, ?style:Dynamic);
 	var game:Game;
 	var exists:Bool;
@@ -22,4 +22,6 @@ extern class BitmapText {
 	var angle(default, default):Float;
 	var x(default, default):Float;
 	var y(default, default):Float;
+	
+	private var _cache:Dynamic;
 }

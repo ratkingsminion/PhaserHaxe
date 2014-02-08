@@ -22,11 +22,14 @@ extern class Math {
 	function ceilTo(value:Float, ?place:Float, ?base:Float):Float;
 	function interpolateFloat(a:Float, b:Float, weight:Float):Float;
 	function angleBetween(x1:Float, y1:Float, x2:Float, y2:Float):Float;
+	function reverseAngle(angleRad:Float):Float;
 	function normalizeAngle(angle:Float, ?radian:Bool):Float;
+	function normalizeLatitude(lat:Float):Float;
+	function normalizeLongitude(lng:Float):Float;
 	function nearestAngleBetween(a:Float, b:Float, ?radians:Bool):Float;
 	function interpolateAngles(a1:Float, a2:Float, weight:Float, ?radians:Bool, ?ease:Float->Float->Float->Float->Float):Float;
 	function chanceRoll(?chance:Float):Bool;
-	@:overload(function (min:Int, max:Int):Array<Int> { })
+	@:overload(function (min:Int, max:Int):Array<Int> { } )
 	function numberArray(min:Float, max:Float):Array<Float>;
 	function maxAdd(value:Float, amount:Float, max:Float):Float;
 	function minSub(value:Float, amount:Float, max:Float):Float;
@@ -35,8 +38,14 @@ extern class Math {
 	function randomSign():Float;
 	function isOdd(n:Int):Bool;
 	function isEven(n:Int):Bool;
+	@:overload(function (array:Array<Float>):Float { } )
 	function max(?param1:Float, ?param2:Float, ?param3:Float, ?param4:Float, ?param5:Float, ?param6:Float, ?param7:Float, ?param8:Float, ?param9:Float, ?param10:Float):Float;
+	@:overload(function (array:Array<Float>):Float { } )
 	function min(?param1:Float, ?param2:Float, ?param3:Float, ?param4:Float, ?param5:Float, ?param6:Float, ?param7:Float, ?param8:Float, ?param9:Float, ?param10:Float):Float;
+	@:overload(function (property:String, array:Array<Float>):Float { } )
+	function minProperty(property:String, ?param2:Float, ?param3:Float, ?param4:Float, ?param5:Float, ?param6:Float, ?param7:Float, ?param8:Float, ?param9:Float, ?param10:Float):Float;
+	@:overload(function (property:String, array:Array<Float>):Float { } )
+	function maxProperty(property:String, ?param2:Float, ?param3:Float, ?param4:Float, ?param5:Float, ?param6:Float, ?param7:Float, ?param8:Float, ?param9:Float, ?param10:Float):Float;
 	function wrapAngle(angle:Float):Float;
 	function angleLimit(angle:Float, min:Float, max:Float):Float;
 	function linearInterpolation(v:Float, k:Float):Float;
@@ -53,6 +62,7 @@ extern class Math {
 	function shift(stack:Dynamic):Dynamic;
 	function shuffleArray(array:Dynamic):Dynamic;
 	function distance(x1:Float, y1:Float, x2:Float, y2:Float):Float;
+	function distancePow(x1:Float, y1:Float, x2:Float, y2:Float, ?pow:Float):Float;
 	function distanceRounded(x1:Float, y1:Float, x2:Float, y2:Float):Float;
 	function clamp(x:Float, a:Float, b:Float):Float;
 	function clampBottom(x:Float, a:Float):Float;
@@ -61,6 +71,6 @@ extern class Math {
 	function smoothstep(x:Float, min:Float, max:Float):Float;
 	function smootherstep(x:Float, min:Float, max:Float):Float;
 	function sign(x:Float):Float;
-	//function degToRad():Float; // seem broken
-	//function radToDeg():Float; // seem broken
+	function degToRad(degrees:Float):Float;
+	function radToDeg(radians :Float):Float;
 }

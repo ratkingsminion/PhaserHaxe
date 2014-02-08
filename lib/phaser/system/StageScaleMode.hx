@@ -7,7 +7,6 @@ import phaser.geom.Point;
 @:native("Phaser.StageScaleMode")
 @:publicFields
 extern class StageScaleMode {
-
 	function new(game:Game, width:Float, height:Float);
 	var game:Game;
 	var width:Float;
@@ -52,4 +51,9 @@ extern class StageScaleMode {
 	var isFullScreen(default, null):Bool;
 	var isPortrait(default, null):Bool;
 	var isLandscape(default, null):Bool;
+	
+	private var _startHeight:Float;
+	private var _width:Float;
+	private var _height:Float;
+	private function fullScreenChange(?event:Dynamic):Void;
 }

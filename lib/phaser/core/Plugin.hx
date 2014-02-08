@@ -8,6 +8,7 @@ extern class Plugin {
 	var parent:Dynamic;
 	var active:Bool;
 	var visible:Bool;
+	var hasPreUpdate:Bool;
 	var hasUpdate:Bool;
 	var hasPostUpdate:Bool;
 	var hasRender:Bool;

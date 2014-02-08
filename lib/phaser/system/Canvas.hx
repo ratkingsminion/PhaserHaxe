@@ -7,7 +7,7 @@ import phaser.geom.Point;
 @:native("Phaser.Canvas")
 @:publicFields
 extern class Canvas {
-	static function create(?width:Float, ?height:Float):CanvasElement;
+	static function create(?width:Float, ?height:Float, ?id:String):CanvasElement;
 	static function getOffset(element:HtmlElement, ?point:Point):Point;
 	static function getAspectRatio(canvas:CanvasElement):Float;
 	static function setBackgroundColor(canvas:CanvasElement, ?color:String):CanvasElement;

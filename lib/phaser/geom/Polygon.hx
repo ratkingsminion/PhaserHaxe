@@ -2,10 +2,10 @@ package phaser.geom;
 
 @:native("Phaser.Polygon")
 @:publicFields
-extern class Polygon {
-	@:overload(function (points:Array<Float>):Void { } )
+extern class Polygon { // TODO extends PIXI.Polygon
 	/**
-	 * param	points can be Array of phaser.Points or Array of Floats
+	 * param	points can be Array<Point> or Array<Float>
 	 */
-	function new(points:Array<Point>);
+	function new(points:Dynamic);
+	var type:Int;
 }

@@ -26,4 +26,10 @@ extern class SoundManager {
 	function play(key:String, ?volume:Float, ?loop:Bool, ?destroyOnComplete:Bool):Sound;
 	var mute(default, default):Bool;
 	var volume(default, default):Float;
+	
+	private var _muted:Bool;
+	private var _unlockSource:Dynamic;
+	private var _volume:Float;
+	private var _sounds:Array<Sound>;
+	private function boot():Void;
 }

@@ -10,6 +10,7 @@ extern class Mouse {
 	var game:Game;
 	var callbackContext:Dynamic;
 	var mouseDownCallback:MouseEvent->Void;
+	var mouseMoveCallback:MouseEvent->Void;
 	var mouseUpCallback:MouseEvent->Void;
 	var capture:Bool;
 	var button:Int;
@@ -22,7 +23,13 @@ extern class Mouse {
 	function onMouseMove(event:MouseEvent):Void;
 	function onMouseUp(event:MouseEvent):Void;
 	function requestPointerLock():Void;
+	function pointerLockChange(event:Dynamic):Void;
+	function releasePointerLock():Void;
 	function stop():Void;
+	
+	private var _onMouseDown:Dynamic;
+	private var _onMouseMove:Dynamic;
+	private var _onMouseUp:Dynamic;
 /*
 }
 

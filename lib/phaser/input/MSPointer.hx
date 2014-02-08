@@ -14,4 +14,8 @@ extern class MSPointer {
 	function onPointerMove(event:Dynamic):Void; // event:PointerEvent
 	function onPointerUp(event:Dynamic):Void; // event:PointerEvent
 	function stop():Void;
+	
+	private var _onMSPointerDown:Dynamic;
+	private var _onMSPointerMove:Dynamic;
+	private var _onMSPointerUp:Dynamic;
 }

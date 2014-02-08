@@ -18,14 +18,24 @@ extern class Keyboard {
 	function createCursorKeys(): { up:Key, down:Key, left:Key, right:Key };
 	function start():Void;
 	function stop():Void;
-	@:overload(function (keycode:Array<Int>):Void { } )
+	/**
+	 * @param	keycode can be Int or Array<Int>
+	 */
 	function addKeyCapture(keycode:Int):Void;
 	function removeKeyCapture(keycode:Int):Void;
 	function clearCaptures():Void;
 	function reset():Void;
-	function justPressed(keycode:Int, ?duration:Float):Bool;
-	function justReleased(keycode:Int, ?duration:Float):Bool;
+	function justPressed(keycode:Int, ?duration:Int):Bool;
+	function justReleased(keycode:Int, ?duration:Int):Bool;
 	function isDown(keycode:Int):Bool;
+	
+	private var _keys:Dynamic;
+	private var _hotKeys:Dynamic;
+	private var _capture:Dynamic;
+	private var _onKeyDown:Dynamic;
+	private var _onKeyUp:Dynamic;
+	private function processKeyDown(event:KeyboardEvent):Void;
+	private function processKeyUp(event:KeyboardEvent):Void;
 /*
 }
 

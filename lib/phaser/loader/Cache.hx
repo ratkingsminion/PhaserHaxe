@@ -17,10 +17,10 @@ extern class Cache {
 	var game:Game;
 	var onSoundUnlock:Signal;
 	function addCanvas(key:String, canvas:CanvasElement, context:CanvasRenderingContext2D):Void;
+	function addBinary(key:String, binaryData:Dynamic):Void;
 	function addBitmapData(key:String, bitmapData:BitmapData):BitmapData;
 	function addRenderTexture(key:String, texture:Dynamic):Void; // texture:Phaser.Texture
-	function addSpriteSheet(key:String, url:String, data:Dynamic, frameWidth:Int, FrameHeight:Int, frameMax:Int):Void;
-	function addTileset(key:String, url:String, data:Dynamic, tileWidth:Int, tileHeight:Int, tileMax:Int, tileMargin:Int, tileSpacing:Int):Void;
+	function addSpriteSheet(key:String, url:String, data:Dynamic, frameWidth:Int, frameHeight:Int, ?frameMax:Int, ?margin:Int, ?spacing:Int):Void;
 	function addTilemap(key:String, url:String, mapData:Dynamic, format:Int):Void;
 	function addTextureAtlas(key:String, url:String, data:Dynamic, atlasData:Dynamic, format:Int):Void;
 	function addBitmapFont(key:String, url:String, data:Dynamic, xmlData:Dynamic):Void;
@@ -37,8 +37,6 @@ extern class Cache {
 	function getBitmapData(key:String):BitmapData;
 	function checkImageKey(key:String):Bool;
 	function getImage(key:String):Dynamic;
-	function getTilesetImage(key:String):Dynamic;
-	function getTileset(key:String):Tileset;
 	function getTilemapData(key:String):Dynamic;
 	function getFrameData(key:String):FrameData;
 	function getFrameByIndex(key:String, frame:Int):Frame;
@@ -52,6 +50,7 @@ extern class Cache {
 	function isSoundReady(key:String):Bool;
 	function isSpriteSheet(key:String):Bool;
 	function getText(key:String):Dynamic;
+	function getBinary(key:String):Dynamic;
 	function getKeys(array:Array<Dynamic>):Array<String>;
 	function getImageKeys():Array<String>;
 	function getSoundKeys():Array<String>;
@@ -61,4 +60,13 @@ extern class Cache {
 	function removeSound(key:String):Void;
 	function removeText(key:String):Void;
 	function destroy():Void;
+	
+	private var _canvases:Dynamic;
+	private var _images:Dynamic;
+	private var _textures:Dynamic;
+	private var _sounds:Dynamic;
+	private var _text:Dynamic;
+	private var _tilemaps:Dynamic;
+	private var _binary:Dynamic;
+	private var _btmapDatas:Dynamic;
 }
