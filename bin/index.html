@@ -17,7 +17,7 @@
 <body>
 	<script src="game.js"></script>
 	<script language="Javascript">
-		// !!! this is needed because of a bug in haxe (https://github.com/HaxeFoundation/haxe/issues/2060)
+		// !!! this is needed because of a bug in haxe 3.0.1 (https://github.com/HaxeFoundation/haxe/issues/2060)
 		if (Object.defineProperty) {
 			Object.defineProperty(String.prototype, "__class__", { writable: true, enumerable: false } );
 			Object.defineProperty(Array.prototype, "__class__", { writable: true, enumerable: false } );
