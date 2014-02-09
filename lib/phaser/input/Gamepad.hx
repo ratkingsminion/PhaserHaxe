@@ -28,6 +28,7 @@ extern class Gamepad {
 	var pad2(default, null):Bool;
 	var pad3(default, null):Bool;
 	var pad4(default, null):Bool;
+	
 	static var BUTTON_0(default, null):Int;
 	static var BUTTON_1(default, null):Int;
 	static var BUTTON_2(default, null):Int;

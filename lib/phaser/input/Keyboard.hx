@@ -21,28 +21,14 @@ extern class Keyboard {
 	/**
 	 * @param	keycode can be Int or Array<Int>
 	 */
-	function addKeyCapture(keycode:Int):Void;
+	function addKeyCapture(keycode:Dynamic):Void;
 	function removeKeyCapture(keycode:Int):Void;
 	function clearCaptures():Void;
 	function reset():Void;
 	function justPressed(keycode:Int, ?duration:Int):Bool;
 	function justReleased(keycode:Int, ?duration:Int):Bool;
 	function isDown(keycode:Int):Bool;
-	
-	private var _keys:Dynamic;
-	private var _hotKeys:Dynamic;
-	private var _capture:Dynamic;
-	private var _onKeyDown:Dynamic;
-	private var _onKeyUp:Dynamic;
-	private function processKeyDown(event:KeyboardEvent):Void;
-	private function processKeyUp(event:KeyboardEvent):Void;
-/*
-}
 
-@:native("Phaser.Keyboard")
-@:publicFields
-extern class Keycode {
-*/
 	static var A(default, null):Int;
 	static var B(default, null):Int;
 	static var C(default, null):Int;
@@ -141,4 +127,12 @@ extern class Keycode {
 	static var DELETE(default, null):Int;
 	static var HELP(default, null):Int;
 	static var NUM_LOCK(default, null):Int;
+	
+	private var _keys:Dynamic;
+	private var _hotKeys:Dynamic;
+	private var _capture:Dynamic;
+	private var _onKeyDown:Dynamic;
+	private var _onKeyUp:Dynamic;
+	private function processKeyDown(event:KeyboardEvent):Void;
+	private function processKeyUp(event:KeyboardEvent):Void;
 }

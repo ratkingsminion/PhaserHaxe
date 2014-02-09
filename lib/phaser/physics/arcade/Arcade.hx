@@ -21,11 +21,8 @@ extern class Arcade {
 	var worldBottom:Box;
 	var worldPolys:Array<Box>;
 	var quadTree:QuadTree;
-	//var bounds:Rectangle;
 	var maxObjects:Int;
 	var maxLevels:Int;
-	//var OVERLAP_BIAS:Int;
-	//var quadTreeID:Int;
 	static var RECT:Int;
 	static var CIRCLE:Int;
 	static var POLYGON:Int;

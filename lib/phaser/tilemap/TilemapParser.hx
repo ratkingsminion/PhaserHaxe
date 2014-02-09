@@ -8,5 +8,4 @@ extern class TilemapParser {
 	static function parse(game:Game, key:String): { layers:Dynamic, objects:Dynamic, images:Dynamic, tilesets:Dynamic };
 	static function parseCSV(data:Dynamic): { name:String, width:Int, height:Int, alpha:Float, visible:Bool, indexes:Dynamic, tileMargin:Int, tileSpacing:Int, data:Dynamic };
 	static function parseTiledJSON(json:Dynamic):Dynamic;
-	
 }

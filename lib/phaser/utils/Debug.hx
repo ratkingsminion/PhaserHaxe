@@ -2,8 +2,6 @@ package phaser.utils;
 import js.html.CanvasRenderingContext;
 import phaser.core.Camera;
 import phaser.core.Game;
-import phaser.core.Group;
-import phaser.core.LinkedList.LinkedList;
 import phaser.gameobjects.Sprite;
 import phaser.geom.Circle;
 import phaser.geom.Line;
@@ -48,8 +46,8 @@ extern class Debug {
 	function renderRectangle(rect:Rectangle, ?color:String):Void;
 	function renderCircle(circle:Circle, ?color:String):Void;
 	function renderText(text:String, x:Float, y:Float, ?color:String, ?font:String):Void;
-	function renderPhysicsBody(body:Body, ?color:String, ?context:CanvasRenderingContext):Void; // error, context isn't used, but must be set
-	function renderPolygon(polygon:Polygon, ?color:String, ?context:CanvasRenderingContext):Void; // error, context isn't used, but must be set
+	function renderPhysicsBody(body:Body, ?color:String):Void;
+	function renderPolygon(polygon:Polygon, ?color:String):Void;
 	
 	private function start(?x:Float, ?y:Float, ?color:String, ?columnWidth:Int):Void;
 	private function stop():Void;

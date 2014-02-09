@@ -26,19 +26,13 @@ extern class Mouse {
 	function pointerLockChange(event:Dynamic):Void;
 	function releasePointerLock():Void;
 	function stop():Void;
-	
-	private var _onMouseDown:Dynamic;
-	private var _onMouseMove:Dynamic;
-	private var _onMouseUp:Dynamic;
-/*
-}
 
-@:native("Phaser.Mouse")
-@:publicFields
-extern class MouseButton {
-*/
 	static var NO_BUTTON(default, null):Int;
 	static var LEFT_BUTTON(default, null):Int;
 	static var MIDDLE_BUTTON(default, null):Int;
 	static var RIGHT_BUTTON(default, null):Int;
+	
+	private var _onMouseDown:Dynamic;
+	private var _onMouseMove:Dynamic;
+	private var _onMouseUp:Dynamic;
 }
