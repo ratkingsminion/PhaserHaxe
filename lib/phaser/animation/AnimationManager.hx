@@ -11,6 +11,10 @@ extern class AnimationManager {
 	var currentFrame:Frame;
 	var updateIfVisible:Bool;
 	var isLoaded:Bool;
+	/**
+	 * @param	frames can be Array<Int> or Array<String>
+	 * @param	useNumericIndex must be set to false when frames is Array<String>
+	 */
 	function add(name:String, ?frames:Dynamic, ?frameRate:Float, ?loop:Bool, ?useNumericIndex:Bool):Animation;
 	/**
 	 * @param	frames can be Array<Int> or Array<String>

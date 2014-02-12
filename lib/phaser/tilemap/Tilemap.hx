@@ -28,7 +28,6 @@ extern class Tilemap {
 	static var TILED_JSON(default, null):Int;
 	function create(name:String, width:Int, height:Int):Void;
 	function addTilesetImage(tileset:String, ?key:String):Void;
-	function createFromTiles(layer:Int, tileIndex:Int, key:String, frame:Dynamic, group:Group):Void;
 	/**
 	 * @param	frame can be String or Int
 	 */

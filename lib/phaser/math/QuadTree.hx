@@ -6,12 +6,12 @@ import phaser.gameobjects.Sprite;
 @:publicFields
 extern class QuadTree {
 	function new(x:Float, y:Float, width:Int, height:Int, ?maxObjects:Int, ?maxLevels:Int, ?level:Int);
-    var maxObjects:Int;
-    var maxLevels:Int;
-    var level:Int;
-    var bounds: { x:Int, y:Int, width:Int, height:Int, subWidth:Int, subHeight:Int, right:Int, bottom:Int };
-    var objects:Dynamic;
-    var nodes:Array<QuadTree>;
+	var maxObjects:Int;
+	var maxLevels:Int;
+	var level:Int;
+	var bounds: { x:Int, y:Int, width:Int, height:Int, subWidth:Int, subHeight:Int, right:Int, bottom:Int };
+	var objects:Dynamic;
+	var nodes:Array<QuadTree>;
 	function populate(group:Group):Void;
 	function populateHandler(sprite:Sprite):Void;
 	function split():Void;

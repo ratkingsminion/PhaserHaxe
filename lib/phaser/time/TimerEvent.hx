@@ -12,4 +12,6 @@ extern class TimerEvent {
 	var callback:Dynamic;
 	var callbackContext:Dynamic;
 	var args:Array<Dynamic>;
+	
+	private var pendingDelete:Bool;
 }
