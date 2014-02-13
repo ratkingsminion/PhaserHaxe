@@ -32,7 +32,7 @@ extern class Game {
 	 * either Phaser.RENDERER_AUTO, Phaser.RENDERER_CANVAS or Phaser.RENDERER_WEBGL
 	 */
 	var renderType:Int;
-	var state:Int;
+	var state:StateManager;
 	var isBooted:Bool;
 	var isRunning:Bool;
 	var raf:RequestAnimationFrame;
