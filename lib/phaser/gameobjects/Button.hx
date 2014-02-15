@@ -13,7 +13,7 @@ extern class Button extends Sprite {
 	 * @param	?downFrame can be String or Int
 	 * @param	?upFrame can be String or Int
 	 */
-	function new(game:Game, ?x:Float, ?x:Float, ?key:String, ?callback:Dynamic, ?callbackContext:Dynamic, ?overFrame:Dynamic, ?outFrame:Dynamic, ?downFrame:Dynamic, ?upFrame:Dynamic);
+	function new(game:Game, ?x:Float, ?y:Float, ?key:String, ?callback:Dynamic, ?callbackContext:Dynamic, ?overFrame:Dynamic, ?outFrame:Dynamic, ?downFrame:Dynamic, ?upFrame:Dynamic);
 	var onOverSound:Sound;
 	var onOutSound:Sound;
 	var onDownSound:Sound;
