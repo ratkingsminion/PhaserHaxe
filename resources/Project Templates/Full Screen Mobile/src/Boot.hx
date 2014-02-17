@@ -14,14 +14,12 @@ class Boot extends State
 	
 	override public function preload():Void 
 	{
-		super.preload();
 		load.image('preloaderBackground', 'images/preloader_background.jpg');
         load.image('preloaderBar', 'images/preloader_bar.png');
 	}
 	
 	override public function create():Void 
 	{
-		super.create();
 		game.input.maxPointers = 1;
         game.stage.disableVisibilityChange = true;
 

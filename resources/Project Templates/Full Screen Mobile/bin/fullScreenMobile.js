@@ -21,7 +21,6 @@ Boot.prototype = $extend(Phaser.State.prototype,{
 	,gameResized: function(width,height) {
 	}
 	,create: function() {
-		Phaser.State.prototype.create.call(this);
 		this.game.input.maxPointers = 1;
 		this.game.stage.disableVisibilityChange = true;
 		if(this.game.device.desktop) {
@@ -50,7 +49,6 @@ Boot.prototype = $extend(Phaser.State.prototype,{
 		this.game.state.start("Preloader");
 	}
 	,preload: function() {
-		Phaser.State.prototype.preload.call(this);
 		this.load.image("preloaderBackground","images/preloader_background.jpg");
 		this.load.image("preloaderBar","images/preloader_bar.png");
 	}
@@ -102,9 +100,14 @@ var Preloader = function() {
 };
 Preloader.__super__ = Phaser.State;
 Preloader.prototype = $extend(Phaser.State.prototype,{
-	create: function() {
+	update: function() {
+		if(this.cache.isSoundDecoded("titleMusic") && this._ready == false) {
+			this._ready = true;
+			this.game.state.start("MainMenu");
+		}
+	}
+	,create: function() {
 		this._preloadBar.cropEnabled = false;
-		this.game.state.start("MainMenu");
 	}
 	,preload: function() {
 		this._background = this.add.sprite(0,0,"preloaderBackground");
