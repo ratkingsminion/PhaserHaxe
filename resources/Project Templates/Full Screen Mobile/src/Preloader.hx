@@ -15,7 +15,7 @@ class Preloader extends State
 	
 	override public function preload():Void 
 	{
-		//	These are the assets we loaded in Boot.js
+		//	These are the assets we loaded in Boot
 		//	A nice sparkly background and a loading progress bar
 		_background = add.sprite(0, 0, 'preloaderBackground');
 		_preloadBar = add.sprite(300, 400, 'preloaderBar');
