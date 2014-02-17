@@ -110,7 +110,6 @@ Preloader.prototype = $extend(Phaser.State.prototype,{
 	}
 	,create: function() {
 		this._preloadBar.cropEnabled = false;
-		this.game.state.start("MainMenu");
 	}
 	,preload: function() {
 		this._background = this.add.sprite(0,0,"preloaderBackground");

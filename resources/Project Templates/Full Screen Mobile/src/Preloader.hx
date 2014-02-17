@@ -39,7 +39,7 @@ class Preloader extends State
 		//	Once the load has finished we disable the crop because we're going to sit in the update loop for a short while as the music decodes
 		_preloadBar.cropEnabled = false;
 		
-		game.state.start('MainMenu');
+		//game.state.start('MainMenu');
 	}
 	
 	override public function update():Void 
@@ -50,7 +50,7 @@ class Preloader extends State
 		//	seconds of delay while the mp3 decodes - so if you need your music to be in-sync with your menu
 		//	it's best to wait for it to decode here first, then carry on.
 		
-		//	If you don't have any music in your game then put the game.state.start line into the create function and delete
+		//	If you don't have any music in your game then uncomment the game.state.start line into the create function and delete
 		//	the update function completely.
 		
 		if (cache.isSoundDecoded('titleMusic') && _ready == false)
