@@ -1,0 +1,4 @@
+-cp ../../../lib
+-cp src
+-main Main.hx
+-js bin/fullScreenMobile.js
