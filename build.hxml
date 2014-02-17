@@ -1,0 +1,6 @@
+-cp lib
+-cp src
+-main Main.hx
+-js bin/game.js
+-cmd cd bin
+-cmd index.html
