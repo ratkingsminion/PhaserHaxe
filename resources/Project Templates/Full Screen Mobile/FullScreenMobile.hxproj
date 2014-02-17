@@ -12,6 +12,7 @@
     <movie minorVersion="0" />
     <movie platform="JavaScript" />
     <movie background="#FFFFFF" />
+    <movie preferredSDK="Haxe 3.0.1;3.0.1;" />
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
@@ -22,7 +23,6 @@
   <build>
     <option directives="" />
     <option flashStrict="False" />
-    <option noInlineOnDebug="False" />
     <option mainClass="Main" />
     <option enabledebug="False" />
     <option additional="" />
